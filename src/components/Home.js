@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-import { Container, Button, Checkbox, Form } from 'semantic-ui-react'
+import { Container, Button, Checkbox, Form, Header } from 'semantic-ui-react'
 export default class Home extends Component {
     render() {
         return (
-            <div>
+            <div>                
                 <Container>
+                    <Header as='h1'>Login</Header>
                     <Form>
                         <Form.Field>
                             <label>User Id</label>
