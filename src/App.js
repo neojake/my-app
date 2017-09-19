@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
-import {Input, Menu} from 'semantic-ui-react';
+import Footer from './components/Footer';
+import Cart from './components/Cart';
 
 class App extends Component {
   render() {
@@ -16,7 +17,10 @@ class App extends Component {
         <hr/>
 
         <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
+        <Route path="/about" component={About}/>        
+        <Route path="/cart" component={Cart}/>                
+
+        <Footer />
       </div>
     </Router>
     );

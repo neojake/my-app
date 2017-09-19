@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Input, Menu} from 'semantic-ui-react';
-import Home from './Home';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+
 class Header extends Component {
 
     render() {
@@ -14,6 +14,9 @@ class Header extends Component {
                     </Menu.Item>
                     <Menu.Item as={Link} to='/about'>
                         About
+                    </Menu.Item>
+                    <Menu.Item as={Link} to='/cart'>
+                        Cart
                     </Menu.Item>
                 </Menu>
             </div>
