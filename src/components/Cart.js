@@ -15,7 +15,7 @@ class Cart extends Component {
     render() {
         
         const CartItems = this.props.cart.map((item, idx) => {
-            return <li key={idx}>{item} <button>[-]</button></li>
+            return <li key={idx}>{item}</li>
         });
 
         return (
