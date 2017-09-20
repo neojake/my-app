@@ -1,16 +1,53 @@
 import * as types from '../actions/ActionTypes';
 
 const initialState = {
-    number : 0
+    counters: [{
+        number: 0,
+        color: 'black'
+    }]
 }
 
-export default(state= initialState, action) => {
-    
-    switch(action.type) {
+export default (state = initialState, action) => {
+
+    const { counters } = state;
+
+    switch (action.type) {
+        case types.CREATE:
+            return {
+                counters: [
+                    ...counters,
+                    {
+                        number: 0,
+                        color: action.color
+                    }
+                ]
+            }
+        case types.REMOVE:
+            return {
+                counters: counters.slice(0, counters.length - 1)
+            }
         case types.INCREMENT:
-            return { ...state, number : state.number + 1};
-        case types.DECREMENT:            
-            return { ...state, number : state.number - 1};
+            return {
+                counters: [
+                    ...counters.slice(0, action.index),
+                    {
+                        ...counters[action.index],
+                        number: counters[action.index].number +1
+                    },
+                    ...counters.slice(action.index+1, counters.length)
+                ]
+            }
+        case types.DECREMENT:
+            return {
+                counters: [
+                    ...counters.slice(0, action.index),
+                    {
+                        ...counters[action.index],
+                        number: counters[action.index].number -1                        
+                    },
+                    ...counters.slice(action.index+1, counters.length)
+                ]
+            }
         default:
             return state;
     }

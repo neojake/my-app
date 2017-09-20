@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
 
+
 export default class Shelf extends Component {
     constructor(props) {
         super(props);
-        this.onAddItemToCart = this.onAddItemToCart.bind(this);
-        
-        this.state = {
-            shelfItems: [
-                'shampoo',
-                'chocolate',
-                'yogurt'
-            ]
-        }
+        this.onAddItemToCart = this.onAddItemToCart.bind(this);        
     }
 
     onAddItemToCart(item) {
@@ -20,7 +13,13 @@ export default class Shelf extends Component {
 
     render() {
 
-        const shelfItems = this.state.shelfItems.map((item, idx) => {
+        const shopList = [
+            'shampoo',
+            'chocolate',
+            'yogurt'
+        ]
+
+        const shelfItems = shopList.map((item, idx) => {
             return <li key={idx}><button onClick={() => this.onAddItemToCart(item)}>[+]</button>{item}</li>
         });
 

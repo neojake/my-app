@@ -3,36 +3,25 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as CartActions from '../actions/cart'
 import Shelf from './Shelf'
+import Bag from './Bag'
 
 class Cart extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {}    
-    }
-
     
-    render() {
-        
-        const CartItems = this.props.cart.map((item, idx) => {
-            return <li key={idx}>{item}</li>
-        });
+    render() {            
 
         return (
             <div>
                 <Shelf addItem={this.props.action.addToCart} />
-                <h2>Shopping Bag</h2>
-                <ol>
-                    {CartItems}
-                </ol>
+                <Bag bags={this.props.bags} delItem={this.props.action.delToBags} />
             </div>
         )
     }
 }
 
 function mapStateToProps(state, props) {
+
     return {
-        cart: state.cart
+        bags: state.bags        
     }
 }
 

@@ -1,14 +1,28 @@
 import * as types from './ActionTypes';
 
-export function increment() {
+export const create = (color) => {
     return {
-        type : types.INCREMENT
+        type : types.CREATE,
+        color
     }
 }
 
-/* ES6 */
-export const decrement = () => {
+export const remove = () => {
     return {
-        type : types.DECREMENT
+        type : types.REMOVE        
+    }
+}
+
+export const increment = (index) => {
+    return {
+        type : types.INCREMENT,
+        index
+    }
+}
+
+export const decrement = (index) => {
+    return {
+        type : types.DECREMENT,
+        index
     }
 }

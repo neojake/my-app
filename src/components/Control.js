@@ -32,6 +32,7 @@ class Control extends Component {
     }
 }
 
+
 Control.propTypes = propTypes;
 Control.defaultProps = defaultProps;
 

@@ -6,7 +6,7 @@ export const addToCart = (item) => {
     };
 }
 
-export const removeFromCart = (key) => {
+export const delToBags = (key) => {
     return {
         type: 'del',
         key

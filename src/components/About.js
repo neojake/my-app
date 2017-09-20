@@ -8,8 +8,7 @@ import * as actions from '../actions';
 class About extends Component {
     render() {
         return (
-            <div>
-                <h1>About Page!!</h1>
+            <div>                
                 <Value number={this.props.number} />
                 <Control onPlus={this.props.action.increment} onSubtract={this.props.action.decrement} />
             </div>
